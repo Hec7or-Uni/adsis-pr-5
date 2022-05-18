@@ -70,6 +70,19 @@ Añadimos al final las siguientes lineas
 
 Guardamos el fichero, con esto indicamos las carpetas de montaje.
 
+Para aplicar los cambios
+
+```
+sudo shutdown -r now
+```
+
+Para comprobar que los cambios han funcionado
+
+```
+sudo mount /dev/sdb1
+sudo mount /dev/sdb2
+```
+
 # Parte 2
 
 Debemos configurar la red en virtual box cambiamos el adaptador 1 de ambas máquinas a la red host only, después en ambas máquinas:
@@ -127,8 +140,8 @@ cat id_ed25519.pub >> .ssh/authorized_keys
 
 Ejecutamos el script desde la máquina host
 ```
-./parte2.sh 192.168.58.2
-./parte2.sh 192.168.58.3
+./practica5_parte2.sh 192.168.58.2
+./practica5_parte2.sh 192.168.58.3
 ```
 # Parte 3
 
@@ -174,7 +187,7 @@ sudo vgcreate vg_p5 /dev/sdc1
 Subimos el primer script de host a la maquina
 
 ```
-scp vg.sh as@192.168.58.2:~/ 
+scp practica5_parte3_vg.sh as@192.168.58.2:~/ 
 ```
 
 Editamos el fichero que hace que se monten:
@@ -199,18 +212,18 @@ sudo shutdown -r now
 Ejecutamos el script
 
 ```
-sudo ./vg.sh vg_p5 /dev/sdb1 /dev/sdb2
+sudo ./practica5_parte3_vg.sh vg_p5 /dev/sdb1 /dev/sdb2
 ```
 
 Subimos el segundo script de host a la maquina
 
 ```
-scp lv.sh as@192.168.58.2:~/ 
+scp practica5_parte3_lv.sh as@192.168.58.2:~/ 
 scp inputLV.txt as@192.168.58.2:~/ 
 ```
 
 Ejecutamos el script
 
 ```
-sudo ./lv.sh < inputLV.txt
+sudo ./practica5_parte3_lv.sh < inputLV.txt
 ```

@@ -1,5 +1,6 @@
 #!/bin/bash
-
+#798095, Toral Pallas, Hector, M, 3, B
+#821259, Pizarro Martínez, Francisco Javier, M, 3, B
 if [ $EUID -ne 0 ]; then 
     echo "Necesita ser admin"
     exit 1
