@@ -1,6 +1,4 @@
 #!/bin/bash
-# Invocar con la información así
-# "nombreGrupoVolumen,nombreVolumenLogico,tamaño,tipoSistemaFicheros,directorioMontaje"
 
 if [ $EUID -ne 0 ]; then 
     echo "Necesita ser admin"
