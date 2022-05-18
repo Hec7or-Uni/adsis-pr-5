@@ -1,0 +1,3 @@
+vg_p5,01,3MB,ext3,/media/01
+vg_p5,01,10MB,ext3,/media/01
+vg_p5,02,2MB,ext4,/media/02
